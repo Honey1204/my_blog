@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+{% for instance in object_list %}
+<div class="container" style="padding: 50px;">
+<!-- 	href='{% url "detailview" pk=instance.id %}' -->
+<h4 class="display-4"><a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a></h4>
+</div>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+<h4 class="display-4">{{ object.title }}</h4>
+<p>{{ object.content }}</p>
+
+{% if user.is_authenticated %}
+<a href='{% url "postupdate" pk=object.id %}' class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="display: inline;">Update</a>
+<a href='{% url "deleteview" pk=object.id %}' class="btn btn-danger btn-lg active" role="button" aria-pressed="true" style="display: inline;">Delete</a>
+{% endif %}
+</div>
+
+
+{% endblock content %}

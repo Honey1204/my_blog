@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"? You can update it if you want to.</p>
+  <button type="submit" class="btn btn-outline-danger">Delete</button>
+    <a href='{% url "postupdate" pk=object.id %}' class="btn btn-outline-success" role="button" aria-pressed="true">Update</a>
+</form>
+</div>
+
+
+{% endblock content %}
